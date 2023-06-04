@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        footer p {
+            text-align: center;
+            margin: 0px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        nav {
+            -webkit-backdrop-filter: blur(100px);
+            backdrop-filter: blur(100px);
+            background-color: rgba(26, 23, 23, 0.5);
+        }
+
+
+        .navbar {
+
+            z-index: 9;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
+            z-index: -1;
+        }
+
+        .dropdown-menu {
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            padding: 0 !important;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li a {
+            padding: .5rem 1rem;
+        }
+
+        .dropdown-menu::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
+            z-index: -1;
+        }
+
+        img {
+            border-radius: 70%;
+            size: 50%;
+
+            opacity: 0.7
+        }
+
+
+        .card {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
+            background-color: rgba(177, 177, 177, 0.668);
+            border-radius: 80;
+            margin-right: 20%;
+            margin-left: 20%;
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-bottom: 4%;
+            padding-top: 4%;
+            border-radius: 3%;
+            height: 75%;
+        }
+
+        .card-text {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(17, 18, 17);
+        }
+
+        card-body {
+
+
+            box-sizing: content-box;
+            tab-size: 200;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background-color: rgba(77, 20, 20, 0.898);
+
+            padding-bottom: 4%;
+            padding-top: 4%;
+
+        }
+
+        .container {
+
+            box-sizing: 10%;
+            table-layout: fixed;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background-color: rgba(237, 233, 233, 0.479);
+            padding-left: 0%;
+            padding-right: 0%;
+            margin-right: 20%;
+
+        }
+
+        .card-title {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(83, 87, 83);
+
+        }
+
+        form input {
+            align-self: center;
+            padding: .25rem .5rem;
+            border: none;
+            border-bottom: 2px solid transparent;
+            outline: none;
+            transition: all .3s;
+        }
+
+        form input:focus {
+            border-bottom: 2px solid rgb(73, 73, 73);
+        }
+
+       
+        .background-image {
+            min-height: calc(100vh - 56px);
+            background-image: url("{%  static 'img/1.jpg' %}");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 100;
+        }
+        
+        footer {
+            height: 100px;
+            clear: both;
+            text-align: center;
+            padding: 30px 10px 0px 10px;
+            background: url("{%  static 'gray.jpg' %}") repeat left top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 100;
+            opacity: 0.7
+        }
+
+        .btn {
+            background-color: rgb(188, 184, 172);
+
+            opacity: 0.9
+        }
+
+        h5 {
+            box-sizing: content-box;
+            color: rgb(17, 17, 17);
+            text-transform: inherit;
+            shape-outside: none;
+            font-weight: lighter;
+
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h6 {
+            box-sizing: content-box;
+            color: rgb(17, 17, 17);
+            text-transform: inherit;
+            shape-outside: none;
+            font-weight: lighter;
+
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 {
+            box-sizing: content-box;
+            color: rgba(61, 23, 23, 0.986);
+            text-transform: inherit;
+            shape-outside: none;
+            font-weight: lighter;
+
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h3 {
+            box-sizing: content-box;
+            color: rgba(61, 23, 23, 0.986);
+            text-transform: inherit;
+            shape-outside: none;
+            font-weight: lighter;
+
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        input {
+            border-radius: 1rem !important
+        }
+
+        input {
+            border-radius: 1rem !important;
+            background-color: rgb(215, 215, 215);
+        }
+
+        input,
+        textarea {
+            border-radius: 1rem !important;
+            background-color: rgb(215, 215, 215);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="background-image">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="background-image">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent  ">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-black" href="{% url 'index' %}">Strona główna</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="">Galeria</a>
+                            </li>
+
+
+
+                            <li class="nav-item dropdown  me-auto">
+                                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Zwierzyna
+                                </a>
+                                <ul class="dropdown-menu bg-transparent text-black" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item text-black" href="">Gruba</a></li>
+                                    <li><a class="dropdown-item text-black" href="">Drobna</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            </li>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="{% url 'rejestracja' %}">Rejestracja</a>
+                            </li>
+                            </br>
+                            <li class="nav-item">
+                                <a class="nav-link text-black " href="{% url 'logowanie' %}"> <i
+                                        class="bi bi-box-arrow-in-right">Logowanie <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                            <path fill-rule="evenodd"
+                                                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                        </svg></i></a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="{% url 'forum' %}">Forum</a>
+                            </li>
+                            
+
+                            {% endif %}
+
+
+            </nav>
+            <br>
+            <br>
+            <br>
+
+
+            <div class="card text-center background-img">
+                <div class="container-fluid ">
+                    <h5 class=" text-black-50 ">Logowanie</h5>
+                    <div class="card-body">
+
+                        {% block content %} {% for message in messages %}
+                        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                            <strong>Message: </strong>{{message}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        {% endfor %}
+
+
+
+                        <form method="POST" action="">
+                            {% csrf_token %}
+
+                            <label>Nazwa:</label>
+                            <input type="text" name="username" placeholder="Enter Username" />
+                            <br>
+                            <br>
+
+                            <label>Hasło:</label>
+                            <input type="password" name="password" placeholder="Enter Password" />
+                            <br>
+                            <br>
+
+
+                            <input type="submit" value="Login" />
+                        </form>
+
+
+                        </form>
+
+                        </form>
+                        <br></br>
+
+                        <h6><i class="bi bi-question"> Nie masz jeszcze konta</i><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                            </svg> </h6>
+
+                        <form class="container-fluid justify-content-start">
+                            <a class="link-dark text-center" href="{% url 'rejestracja' %}">
+                                <button class="btn btn-outline-dark" type="button"><i
+                                        class="bi bi-exclamation-lg">Zarejestruj się<svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                                            <path
+                                                d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+                                        </svg></i></button>
+                            </a>
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+                {% endblock %}
+            </div>
+
+        </div>
+
+
+
+
+
+        <script>
+
+            const showcase = document.querySelector('.showcase');
+
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+            crossorigin="anonymous"></script>
+
+</body>
+
+<br>
+<br>
+<footer class="footer">
+
+    <h5> Kontakt:
+        <li>
+            jelen.brzozow@onet.pl
+            ul. Piastowa 22, 36-200 Brzozów podkarpackie
+        </li>
+
+
+</footer>
+
+</html>
